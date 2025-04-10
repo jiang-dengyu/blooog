@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# 虛擬環境
+.venv/
+env/
+venv/
+
+# 編譯檔
+*.so
+
+# VS Code 設定
+.vscode/
+
+# 環境設定檔
+.env
+
+
+# alembic migration 暫存
+alembic/versions/__pycache__/
