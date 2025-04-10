@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app import models
 from app.database import SessionLocal
-
+from app.controllers import post_controller
 router = APIRouter()
 
 def get_db():
@@ -13,6 +13,5 @@ def get_db():
     db.close()
 
 @router.get("/")
-def read_posts(db: Session = Depends(get_db)):
-  posts = db.query(models.Post).all()
-  return posts
+def get_posts(db: Session = Depends(get_db)):
+  return post_controller.read_posts(db)
